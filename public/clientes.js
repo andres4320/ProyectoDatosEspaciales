@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <td>${cliente.ubicacion_lat}, ${cliente.ubicacion_lng}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="/editar/${cliente.id}" class="btn btn-warning p-2">
-                                                <i class="fa-solid fa-pencil"></i>
+                                            <a href="/editar/${cliente.id}" class="btn btn-warning mx-2 p-2">
+                                                <i class="fa-solid fa-pencil"></i> Editar
                                             </a>
-                                            <a href="#" class="btn btn-danger p-2" onclick="deleteClient(${cliente.id})">
-                                                <i class="fa-solid fa-trash"></i>
+                                            <a href="#" class="btn btn-danger mx-2 p-2" onclick="deleteClient(${cliente.id})">
+                                                <i class="fa-solid fa-trash"></i> Eliminar
                                             </a>
                                         </div>
                                     </td>
