@@ -11,11 +11,6 @@ app.use(bodyParser.json());
 // Servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Ruta para redirigir a 'index.html' en la raíz
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 // Conectar rutas
 app.use('/clientes', ClienteController);
 
