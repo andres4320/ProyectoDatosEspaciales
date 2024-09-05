@@ -41,6 +41,78 @@ router.get('/', (req, res) => {
     });
 });
 
+// // Obtener cliente por ID
+// router.get('/:id', async (req, res) => {
+//     try {
+//         const cliente = await ClienteDAO.getClienteById(req.params.id);
+//         if (cliente) {
+//             res.json(cliente);
+//         } else {
+//             res.status(404).send('Cliente no encontrado');
+//         }
+//     } catch (error) {
+//         res.status(500).send('Error del servidor');
+//     }
+// });
+
+// Actualizar un cliente existente
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const updatedCliente = req.body;
+    ClienteDAO.updateClient(id, updatedCliente, (err, result) => {
+        if (err) {
+            res.status(500).send('Error al actualizar cliente');
+        } else {
+            res.send('Cliente actualizado con éxito');
+        }
+    });
+});
+
+// // Actualizar cliente
+// router.put('/:id', async (req, res) => {
+//     try {
+//         const clienteActualizado = await ClienteDAO.updateCliente(req.params.id, req.body);
+//         if (clienteActualizado) {
+//             res.status(200).send('Cliente actualizado con éxito');
+//         } else {
+//             res.status(404).send('Cliente no encontrado');
+//         }
+//     } catch (error) {
+//         res.status(500).send('Error del servidor');
+//     }
+// });
+
+// Ruta para obtener un cliente por ID
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    ClienteDAO.getClientById(id, (err, results) => {
+        if (err) {
+            return res.status(500).send('Error obteniendo cliente');
+        }
+        if (results.length === 0) {
+            return res.status(404).send('Cliente no encontrado');
+        }
+        res.json(results[0]); // Enviar el primer cliente encontrado
+    });
+});
+
+// Eliminar un cliente
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    ClienteDAO.deleteClient(id, (err, result) => {
+        if (err) {
+            res.status(500).send('Error al eliminar cliente');
+        } else {
+            res.send('Cliente eliminado con éxito');
+        }
+    });
+});
+
+// // Ruta para servir la página de edición
+// router.get('/editar/:id', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../public/editar.html'));
+// });
+
 // // Ruta para obtener todos los clientes ordenados por distancia
 // router.get('/por-distancia', async (req, res) => {
 //     const { lat, lng } = req.query;

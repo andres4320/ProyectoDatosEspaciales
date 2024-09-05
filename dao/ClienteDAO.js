@@ -34,12 +34,27 @@ class ClienteDAO {
         this.connection.query('INSERT INTO clientes SET ?', cliente, callback);
     }
 
+    // // Método para actualizar un cliente existente
+    // updateClient(id, updatedCliente, callback) {
+    //     const sql = 'UPDATE clientes SET ? WHERE id = ?';
+    //     this.connection.query(sql, [updatedCliente, id], callback);
+    // }
+
+    // // Método para eliminar un cliente por ID
+    // deleteClient(id, callback) {
+    //     const sql = 'DELETE FROM clientes WHERE id = ?';
+    //     this.connection.query(sql, [id], callback);
+    // }
+
     // Método para actualizar un cliente existente
     updateClient(id, updatedCliente, callback) {
         const sql = 'UPDATE clientes SET ? WHERE id = ?';
         this.connection.query(sql, [updatedCliente, id], callback);
     }
-
+    // Método para obtener un cliente por ID
+    getClientById(id, callback) {
+        this.connection.query('SELECT * FROM clientes WHERE id = ?', [id], callback);
+    }
     // Método para eliminar un cliente por ID
     deleteClient(id, callback) {
         const sql = 'DELETE FROM clientes WHERE id = ?';

@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Listado de Clientes</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #904190;">
-        <a class="navbar-brand text-white" href="index.html">Mi Aplicación</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/index.html">Agregar Cliente</a>
-                </li>
-            </ul>
-        </div>
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #904190"
+    >
+      <a class="navbar-brand text-white" href="index.html">GeoMeet</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/index.html"
+              >Agregar Cliente</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./distancia.html"
+              >Distancia Clientes</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <div class="container mt-5">
-        <h3 class="text-center text-uppercase p-2">Listado de Clientes</h3>
-        <div id="clientes-container">
-            <!-- Aquí se mostrarán los datos de los clientes -->
-        </div>
+      <h3 class="text-center text-uppercase p-2">Listado de Clientes</h3>
+      <div id="clientes-container"></div>
     </div>
 
     <!-- Bootstrap JS y dependencias de popper y jQuery -->
@@ -35,5 +54,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="clientes.js"></script>
-</body>
+  </body>
 </html>
